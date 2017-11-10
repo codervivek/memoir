@@ -89,7 +89,7 @@ AUTHENTICATION_BACKENDS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'excursus',
+        'NAME': 'memoir',
         'USER': 'vivekraj',
         'PASSWORD': 'heysiri',
         'HOST': 'localhost',
