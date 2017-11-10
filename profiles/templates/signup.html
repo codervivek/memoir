@@ -1,0 +1,23 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Signup{% endblock %}
+{% block content %}
+<div class="text-center">
+<div class="card">
+  <div class="card-header"><br>
+    <h1 class="text-center">Sign up</h1>
+  </div>
+  <div class="card-body">
+    <form action="" method="post">
+          <div class="form-group">
+          {% csrf_token %}
+          <table>
+          {{ form }}
+          </table><div class="text-center"><br>
+          <input type="submit" value="Submit" class="btn btn-primary"/></div>
+          </div>
+      </form>
+  </div>
+</div> 
+</div>
+{% endblock %}
