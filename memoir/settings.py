@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'profiles.apps.ProfilesConfig'
+    'profiles.apps.ProfilesConfig',
+    'iitgauth'
 ]
 
 MIDDLEWARE = [
@@ -80,6 +81,10 @@ WSGI_APPLICATION = 'memoir.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+
+AUTHENTICATION_BACKENDS = [
+    'iitgauth.auth.WebMailAuthenticationBackend',
+]
 
 DATABASES = {
     'default': {
