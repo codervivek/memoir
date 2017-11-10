@@ -4,35 +4,70 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+0001_initial.py	../profiles/migrations/0001_initial.py	1;"	kind:file	line:1
+0002_professor.py	../profiles/migrations/0002_professor.py	1;"	kind:file	line:1
 ALLOWED_HOSTS	../memoir/settings.py	/^ALLOWED_HOSTS = []$/;"	kind:variable	line:28
-AUTH_PASSWORD_VALIDATORS	../memoir/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:87
+AUTH_PASSWORD_VALIDATORS	../memoir/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:98
 BASE_DIR	../memoir/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:16
-DATABASES	../memoir/settings.py	/^DATABASES = {$/;"	kind:variable	line:76
+DATABASES	../memoir/settings.py	/^DATABASES = {$/;"	kind:variable	line:84
 DEBUG	../memoir/settings.py	/^DEBUG = True$/;"	kind:variable	line:26
+Department	../profiles/models.py	/^class Department(models.Model):$/;"	kind:class	line:6
 INSTALLED_APPS	../memoir/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:33
-LANGUAGE_CODE	../memoir/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:106
-MIDDLEWARE	../memoir/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:42
+LANGUAGE_CODE	../memoir/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:117
+LOGIN_REDIRECT_URL	../memoir/settings.py	/^LOGIN_REDIRECT_URL = "\/"$/;"	kind:variable	line:131
+LOGOUT_REDIRECT_URL	../memoir/settings.py	/^LOGOUT_REDIRECT_URL = "\/"$/;"	kind:variable	line:132
+MEDIA_ROOT	../memoir/settings.py	/^MEDIA_ROOT = '\/home\/vivekraj\/django_projects\/memoir\/media'$/;"	kind:variable	line:136
+MEDIA_URL	../memoir/settings.py	/^MEDIA_URL = '\/media\/'$/;"	kind:variable	line:137
+MIDDLEWARE	../memoir/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:43
+Migration	../profiles/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
+Migration	../profiles/migrations/0002_professor.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:10
+Professor	../profiles/models.py	/^class Professor(models.Model):$/;"	kind:class	line:18
 ProfilesConfig	../profiles/apps.py	/^class ProfilesConfig(AppConfig):$/;"	kind:class	line:4
-ROOT_URLCONF	../memoir/settings.py	/^ROOT_URLCONF = 'memoir.urls'$/;"	kind:variable	line:52
-STATIC_URL	../memoir/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:120
-TEMPLATES	../memoir/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:54
-TIME_ZONE	../memoir/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:108
-USE_I18N	../memoir/settings.py	/^USE_I18N = True$/;"	kind:variable	line:110
-USE_L10N	../memoir/settings.py	/^USE_L10N = True$/;"	kind:variable	line:112
-USE_TZ	../memoir/settings.py	/^USE_TZ = True$/;"	kind:variable	line:114
-WSGI_APPLICATION	../memoir/settings.py	/^WSGI_APPLICATION = 'memoir.wsgi.application'$/;"	kind:variable	line:70
+ROOT_URLCONF	../memoir/settings.py	/^ROOT_URLCONF = 'memoir.urls'$/;"	kind:variable	line:53
+STATIC_URL	../memoir/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:135
+SignUpForm	../memoir/forms.py	/^class SignUpForm(UserCreationForm):$/;"	kind:class	line:5
+TEMPLATES	../memoir/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:55
+TIME_ZONE	../memoir/settings.py	/^TIME_ZONE = 'Asia\/Kolkata'$/;"	kind:variable	line:119
+USE_I18N	../memoir/settings.py	/^USE_I18N = True$/;"	kind:variable	line:121
+USE_L10N	../memoir/settings.py	/^USE_L10N = True$/;"	kind:variable	line:123
+USE_TZ	../memoir/settings.py	/^USE_TZ = True$/;"	kind:variable	line:125
+WSGI_APPLICATION	../memoir/settings.py	/^WSGI_APPLICATION = 'memoir.wsgi.application'$/;"	kind:variable	line:71
 __init__.py	../memoir/__init__.py	1;"	kind:file	line:1
 __init__.py	../profiles/__init__.py	1;"	kind:file	line:1
 __init__.py	../profiles/migrations/__init__.py	1;"	kind:file	line:1
+__str__	../profiles/models.py	/^    def __str__(self):$/;"	kind:member	line:12
 admin.py	../profiles/admin.py	1;"	kind:file	line:1
 application	../memoir/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
 apps.py	../profiles/apps.py	1;"	kind:file	line:1
+department	../profiles/models.py	/^    department=models.ForeignKey(Department,help_text="Enter your department")$/;"	kind:variable	line:22
+dependencies	../profiles/migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:12
+dependencies	../profiles/migrations/0002_professor.py	/^    dependencies = [$/;"	kind:variable	line:12
+email	../memoir/forms.py	/^    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')/;"	kind:variable	line:8
+fields	../profiles/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:18
+fields	../profiles/migrations/0002_professor.py	/^            fields=[$/;"	kind:variable	line:20
+first_name	../memoir/forms.py	/^    first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')$/;"	kind:variable	line:6
+forms.py	../memoir/forms.py	1;"	kind:file	line:1
+get_absolute_url	../profiles/models.py	/^    def get_absolute_url(self):$/;"	kind:member	line:15
+home	../profiles/views.py	/^def home(request):$/;"	kind:function	line:27
+initial	../profiles/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:10
+last_name	../memoir/forms.py	/^    last_name = forms.CharField(max_length=30, required=False, help_text='Optional.')$/;"	kind:variable	line:7
+mail	../profiles/models.py	/^    mail=models.CharField(max_length=200, help_text="Enter email id to be searched")/;"	kind:variable	line:24
 manage.py	../manage.py	1;"	kind:file	line:1
 models.py	../profiles/models.py	1;"	kind:file	line:1
 name	../profiles/apps.py	/^    name = 'profiles'$/;"	kind:variable	line:5
+name	../profiles/migrations/0001_initial.py	/^            name='Department',$/;"	kind:variable	line:17
+name	../profiles/migrations/0002_professor.py	/^            name='Professor',$/;"	kind:variable	line:19
+name	../profiles/models.py	/^    name=models.CharField(max_length=150 ,help_text="Enter a new department")$/;"	kind:variable	line:8
+operations	../profiles/migrations/0001_initial.py	/^    operations = [$/;"	kind:variable	line:15
+operations	../profiles/migrations/0002_professor.py	/^    operations = [$/;"	kind:variable	line:17
+photo	../profiles/models.py	/^    photo=models.FileField(upload_to='uploads\/item\/photos\/', help_text="Upload a photo", null=True)$/;"	kind:variable	line:10
 settings.py	../memoir/settings.py	1;"	kind:file	line:1
+signup	../profiles/views.py	/^def signup(request):$/;"	kind:function	line:12
 tests.py	../profiles/tests.py	1;"	kind:file	line:1
-urlpatterns	../memoir/urls.py	/^urlpatterns = [$/;"	kind:variable	line:19
+urlpatterns	../memoir/urls.py	/^urlpatterns = [$/;"	kind:variable	line:24
+urlpatterns	../profiles/urls.py	/^urlpatterns = [$/;"	kind:variable	line:6
 urls.py	../memoir/urls.py	1;"	kind:file	line:1
+urls.py	../profiles/urls.py	1;"	kind:file	line:1
+user	../profiles/models.py	/^    user=models.OneToOneField(User,help_text="a",related_name="professor")$/;"	kind:variable	line:20
 views.py	../profiles/views.py	1;"	kind:file	line:1
 wsgi.py	../memoir/wsgi.py	1;"	kind:file	line:1

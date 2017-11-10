@@ -84,9 +84,9 @@ WSGI_APPLICATION = 'memoir.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'excursus',
-        'USER': 'vivekraj',
-        'PASSWORD': 'heysiri',
+        'NAME': 'memoir',
+        'USER': 'kratos',
+        'PASSWORD': 'kratos',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -133,6 +133,6 @@ LOGOUT_REDIRECT_URL = "/"
 
 
 STATIC_URL = '/static/'
-MEDIA_ROOT = '/home/vivekraj/django_projects/memoir/media'
+MEDIA_ROOT = '/home/namit/memoir/media'
 MEDIA_URL = '/media/'
 
