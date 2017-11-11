@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'profiles.apps.ProfilesConfig',
-    'iitgauth'
 ]
 
 MIDDLEWARE = [
@@ -82,16 +81,14 @@ WSGI_APPLICATION = 'memoir.wsgi.application'
 #     }
 # }
 
-AUTHENTICATION_BACKENDS = [
-    'iitgauth.auth.WebMailAuthenticationBackend',
-]
+
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'memoir',
-        'USER': 'vivekraj',
-        'PASSWORD': 'heysiri',
+        'USER': 'kratos',
+        'PASSWORD': 'kratos',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -138,6 +135,6 @@ LOGOUT_REDIRECT_URL = "/"
 
 
 STATIC_URL = '/static/'
-MEDIA_ROOT = '/home/vivekraj/django_projects/memoir/media'
+MEDIA_ROOT = '/home/namit/memoir/media'
 MEDIA_URL = '/media/'
 
