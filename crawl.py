@@ -28,7 +28,6 @@ for num in data[0].split():
         if not (len(y)>20000):
             print(y)
     # print x.split("Content-Type: text/plain",1)[0] 
-    a=a+1
     # print(str)
     for word in data[0][1].split():
     	x=word.decode('cp1252')
