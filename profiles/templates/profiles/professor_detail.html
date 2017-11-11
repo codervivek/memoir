@@ -1,0 +1,47 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block font %}
+<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet"> 
+{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />{% endblock %}
+{% block title %}{{professor.user.username}}{% endblock %}
+
+{% block full-content %}
+<br>
+<div class="text-center"><h1>{{professor.user.first_name}} {{professor.user.last_name}}</h1></div>
+<div class="row">
+    <div class="col-3">
+            <div class="text-center">
+        <div class="card" style="width: 100%;">
+                    <img class="card-img-top" src="{{professor.photo.url}}" alt="Card image cap">
+                    <div class="card-body">
+                            <p class="card-text">Webmail: {{professor.mail}}</p>
+                            <p class="card-text">Department: {{professor.department.name}}</p>
+                    </div>
+            </div>
+    </div>
+    </div>
+    <div class="col-8">
+
+
+            <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                  </ul>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% endblock %} 
+ 

@@ -5,7 +5,7 @@
 <div class="row">
   {% for department in department_list %}
     <div class="col-6">
-    <a href="#"><img src="{{ department.photo.url }}" class="rounded img-thumbnail " vspace="20"></a>
+    <a href="{{department.get_absolute_url}}"><img src="{{ department.photo.url }}" class="rounded img-thumbnail " vspace="20"></a>
   </div>
   {% endfor %}
 </div>

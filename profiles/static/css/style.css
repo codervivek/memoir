@@ -1,0 +1,25 @@
+.xyz{
+    height: 30rem;
+    width:auto;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+}
+
+
+.card-css{
+    display: flex;
+    align-items: stretch;
+}
+
+.abc{
+    height:13rem;
+}
+
+h1{
+    font-family: 'Dosis', sans-serif;
+    display:inline;
+    width:700px;
+    text-align:center;
+}

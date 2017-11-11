@@ -8,7 +8,7 @@ from django.db.models import Max
 from django.views import generic
 from django.contrib.auth.models import User
 from memoir.forms import SignUpForm
-from .models import Department
+from .models import Department,Professor,Category,CategoryList
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -26,4 +26,13 @@ def signup(request):
 def home(request):
     department=Department.objects.all()
     return render(request,'index.html', {'department_list':department})
+
+class ProfessorDetailView(generic.DetailView):
+    model=Professor
+
+class DepartmentListView(generic.ListView):
+    model=Department
+
+class DepartmentDetailView(generic.DetailView):
+    model=Department
 

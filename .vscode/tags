@@ -7,105 +7,111 @@
 0001_initial.py	../profiles/migrations/0001_initial.py	1;"	kind:file	line:1
 0002_professor.py	../profiles/migrations/0002_professor.py	1;"	kind:file	line:1
 ALLOWED_HOSTS	../memoir/settings.py	/^ALLOWED_HOSTS = []$/;"	kind:variable	line:28
-AUTHENTICATION_BACKENDS	../memoir/settings.py	/^AUTHENTICATION_BACKENDS = [$/;"	kind:variable	line:85
-AUTH_PASSWORD_VALIDATORS	../memoir/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:103
+AUTH_PASSWORD_VALIDATORS	../memoir/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:100
 BASE_DIR	../memoir/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:16
-DATABASES	../memoir/settings.py	/^DATABASES = {$/;"	kind:variable	line:89
+Categories	../profiles/models.py	/^class Categories(models.Model):$/;"	kind:class	line:29
+DATABASES	../memoir/settings.py	/^DATABASES = {$/;"	kind:variable	line:86
 DEBUG	../memoir/settings.py	/^DEBUG = True$/;"	kind:variable	line:26
 Department	../profiles/models.py	/^class Department(models.Model):$/;"	kind:class	line:6
-HomeView	../profiles/views.py	/^class HomeView(LoginRequiredMixin, TemplateView):$/;"	kind:class	line:49
 INSTALLED_APPS	../memoir/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:33
-<<<<<<< HEAD
-LANGUAGE_CODE	../memoir/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:117
-LOGIN_REDIRECT_URL	../memoir/settings.py	/^LOGIN_REDIRECT_URL = "\/"$/;"	kind:variable	line:131
-LOGOUT_REDIRECT_URL	../memoir/settings.py	/^LOGOUT_REDIRECT_URL = "\/"$/;"	kind:variable	line:132
-MEDIA_ROOT	../memoir/settings.py	/^MEDIA_ROOT = '\/home\/namit\/memoir\/media'$/;"	kind:variable	line:136
-MEDIA_URL	../memoir/settings.py	/^MEDIA_URL = '\/media\/'$/;"	kind:variable	line:137
+LANGUAGE_CODE	../memoir/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:119
+LOGIN_REDIRECT_URL	../memoir/settings.py	/^LOGIN_REDIRECT_URL = "\/"$/;"	kind:variable	line:133
+LOGOUT_REDIRECT_URL	../memoir/settings.py	/^LOGOUT_REDIRECT_URL = "\/"$/;"	kind:variable	line:134
+M	../crawl.py	/^M = imaplib.IMAP4_SSL('dikrong.iitg.ernet.in')$/;"	kind:variable	line:3
+MEDIA_ROOT	../memoir/settings.py	/^MEDIA_ROOT = '\/home\/namit\/memoir\/media'$/;"	kind:variable	line:138
+MEDIA_URL	../memoir/settings.py	/^MEDIA_URL = '\/media\/'$/;"	kind:variable	line:139
 MIDDLEWARE	../memoir/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:43
-=======
-LANGUAGE_CODE	../memoir/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:122
-LOGIN_REDIRECT_URL	../memoir/settings.py	/^LOGIN_REDIRECT_URL = "\/"$/;"	kind:variable	line:136
-LOGIN_SERVERS	../memoir/constants.py	/^LOGIN_SERVERS = [$/;"	kind:variable	line:1
-LOGOUT_REDIRECT_URL	../memoir/settings.py	/^LOGOUT_REDIRECT_URL = "\/"$/;"	kind:variable	line:137
-LoginView	../profiles/views.py	/^class LoginView(WebmailLoginView):$/;"	kind:class	line:40
-LogoutView	../profiles/views.py	/^class LogoutView(LoginRequiredMixin, View):$/;"	kind:class	line:62
-MEDIA_ROOT	../memoir/settings.py	/^MEDIA_ROOT = '\/home\/namit\/memoir\/media'$/;"	kind:variable	line:141
-MEDIA_URL	../memoir/settings.py	/^MEDIA_URL = '\/media\/'$/;"	kind:variable	line:142
-MIDDLEWARE	../memoir/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:44
->>>>>>> 79c27eb32331afa691b61eea82ad1e188c72b5ba
 Migration	../profiles/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
 Migration	../profiles/migrations/0002_professor.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:10
 Professor	../profiles/models.py	/^class Professor(models.Model):$/;"	kind:class	line:18
 ProfilesConfig	../profiles/apps.py	/^class ProfilesConfig(AppConfig):$/;"	kind:class	line:4
-ROOT_URLCONF	../memoir/settings.py	/^ROOT_URLCONF = 'memoir.urls'$/;"	kind:variable	line:54
-STATIC_URL	../memoir/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:140
+ROOT_URLCONF	../memoir/settings.py	/^ROOT_URLCONF = 'memoir.urls'$/;"	kind:variable	line:53
+STATIC_URL	../memoir/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:137
 SignUpForm	../memoir/forms.py	/^class SignUpForm(UserCreationForm):$/;"	kind:class	line:5
-TEMPLATES	../memoir/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:56
-TIME_ZONE	../memoir/settings.py	/^TIME_ZONE = 'Asia\/Kolkata'$/;"	kind:variable	line:124
-USE_I18N	../memoir/settings.py	/^USE_I18N = True$/;"	kind:variable	line:126
-USE_L10N	../memoir/settings.py	/^USE_L10N = True$/;"	kind:variable	line:128
-USE_TZ	../memoir/settings.py	/^USE_TZ = True$/;"	kind:variable	line:130
-WSGI_APPLICATION	../memoir/settings.py	/^WSGI_APPLICATION = 'memoir.wsgi.application'$/;"	kind:variable	line:72
-WebmailLoginForm	../memoir/forms.py	/^class WebmailLoginForm(forms.Form):$/;"	kind:class	line:20
-__init__	../memoir/forms.py	/^    def __init__(self, request=None, port=None, *args, **kwargs):$/;"	kind:member	line:44
+TEMPLATES	../memoir/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:55
+TIME_ZONE	../memoir/settings.py	/^TIME_ZONE = 'Asia\/Kolkata'$/;"	kind:variable	line:121
+USE_I18N	../memoir/settings.py	/^USE_I18N = True$/;"	kind:variable	line:123
+USE_L10N	../memoir/settings.py	/^USE_L10N = True$/;"	kind:variable	line:125
+USE_TZ	../memoir/settings.py	/^USE_TZ = True$/;"	kind:variable	line:127
+WSGI_APPLICATION	../memoir/settings.py	/^WSGI_APPLICATION = 'memoir.wsgi.application'$/;"	kind:variable	line:71
 __init__.py	../memoir/__init__.py	1;"	kind:file	line:1
 __init__.py	../profiles/__init__.py	1;"	kind:file	line:1
 __init__.py	../profiles/migrations/__init__.py	1;"	kind:file	line:1
 __str__	../profiles/models.py	/^    def __str__(self):$/;"	kind:member	line:12
+a	../crawl.py	/^    a=a+1$/;"	kind:variable	line:32
+a	../crawl.py	/^    a=a+1$/;"	kind:variable	line:44
+a	../crawl.py	/^a=1$/;"	kind:variable	line:10
+a	../webmail_crawler.py	/^	a=a+1$/;"	kind:variable	line:33
+a	../webmail_crawler.py	/^a=1$/;"	kind:variable	line:27
+a	../webmail_crawlers.py	/^	a=a+1$/;"	kind:variable	line:33
+a	../webmail_crawlers.py	/^a=1$/;"	kind:variable	line:27
 admin.py	../profiles/admin.py	1;"	kind:file	line:1
 application	../memoir/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
 apps.py	../profiles/apps.py	1;"	kind:file	line:1
-clean	../memoir/forms.py	/^    def clean(self):$/;"	kind:member	line:57
-confirm_login_allowed	../memoir/forms.py	/^    def confirm_login_allowed(self, user):$/;"	kind:member	line:76
-constants.py	../memoir/constants.py	1;"	kind:file	line:1
+arr	../webmail_crawler.py	/^arr=[]$/;"	kind:variable	line:11
+arr	../webmail_crawlers.py	/^arr=[]$/;"	kind:variable	line:11
+crawl.py	../crawl.py	1;"	kind:file	line:1
 department	../profiles/models.py	/^    department=models.ForeignKey(Department,help_text="Enter your department")$/;"	kind:variable	line:22
 dependencies	../profiles/migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:12
 dependencies	../profiles/migrations/0002_professor.py	/^    dependencies = [$/;"	kind:variable	line:12
 email	../memoir/forms.py	/^    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')$/;"	kind:variable	line:8
-error_messages	../memoir/forms.py	/^    error_messages = {$/;"	kind:variable	line:39
 fields	../profiles/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:18
 fields	../profiles/migrations/0002_professor.py	/^            fields=[$/;"	kind:variable	line:20
 first_name	../memoir/forms.py	/^    first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')$/;"	kind:variable	line:6
+flag	../crawl.py	/^    		flag=1$/;"	kind:variable	line:38
+flag	../crawl.py	/^    flag=0$/;"	kind:variable	line:48
+flag	../crawl.py	/^flag=0$/;"	kind:variable	line:7
+flag	../webmail_crawler.py	/^				flag=1$/;"	kind:variable	line:22
+flag	../webmail_crawler.py	/^	flag=0$/;"	kind:variable	line:13
+flag	../webmail_crawlers.py	/^				flag=1$/;"	kind:variable	line:22
+flag	../webmail_crawlers.py	/^	flag=0$/;"	kind:variable	line:13
+flag1	../crawl.py	/^    flag1=0$/;"	kind:variable	line:49
+flag1	../crawl.py	/^flag1=0$/;"	kind:variable	line:8
 forms.py	../memoir/forms.py	1;"	kind:file	line:1
-get	../profiles/views.py	/^    def get(self, request):$/;"	kind:member	line:69
 get_absolute_url	../profiles/models.py	/^    def get_absolute_url(self):$/;"	kind:member	line:15
-<<<<<<< HEAD
 home	../profiles/views.py	/^def home(request):$/;"	kind:function	line:26
-=======
-get_context_data	../profiles/views.py	/^    def get_context_data(self, **kwargs):$/;"	kind:member	line:56
-get_user	../memoir/forms.py	/^    def get_user(self):$/;"	kind:member	line:87
-get_user_id	../memoir/forms.py	/^    def get_user_id(self):$/;"	kind:member	line:82
-home	../profiles/views.py	/^def home(request):$/;"	kind:function	line:27
-http_method_names	../profiles/views.py	/^    http_method_names = ['get', 'head', 'options']$/;"	kind:variable	line:67
->>>>>>> 79c27eb32331afa691b61eea82ad1e188c72b5ba
 initial	../profiles/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:10
 last_name	../memoir/forms.py	/^    last_name = forms.CharField(max_length=30, required=False, help_text='Optional.')$/;"	kind:variable	line:7
-login_server	../memoir/forms.py	/^    login_server = forms.ChoiceField(choices=LOGIN_SERVERS)$/;"	kind:variable	line:35
-login_url	../profiles/views.py	/^    login_url = reverse_lazy('login')$/;"	kind:variable	line:53
-login_url	../profiles/views.py	/^    login_url = reverse_lazy('login')$/;"	kind:variable	line:66
-mail	../profiles/models.py	/^    mail=models.CharField(max_length=200, help_text="Enter email id to be searched")/;"	kind:variable	line:24
+mail	../profiles/models.py	/^    mail=models.CharField(max_length=200, help_text="Enter email id to be searched")$/;"	kind:variable	line:26
 manage.py	../manage.py	1;"	kind:file	line:1
 models.py	../profiles/models.py	1;"	kind:file	line:1
 name	../profiles/apps.py	/^    name = 'profiles'$/;"	kind:variable	line:5
 name	../profiles/migrations/0001_initial.py	/^            name='Department',$/;"	kind:variable	line:17
 name	../profiles/migrations/0002_professor.py	/^            name='Professor',$/;"	kind:variable	line:19
+name	../profiles/models.py	/^    name=models.CharField(max_length=100,help_text="Enter category")$/;"	kind:variable	line:33
 name	../profiles/models.py	/^    name=models.CharField(max_length=150 ,help_text="Enter a new department")$/;"	kind:variable	line:8
 operations	../profiles/migrations/0001_initial.py	/^    operations = [$/;"	kind:variable	line:15
 operations	../profiles/migrations/0002_professor.py	/^    operations = [$/;"	kind:variable	line:17
-password	../memoir/forms.py	/^    password = forms.CharField(widget=forms.PasswordInput, label=_('Password'))$/;"	kind:variable	line:34
 photo	../profiles/models.py	/^    photo=models.FileField(upload_to='uploads\/item\/photos\/', help_text="Upload a photo", null=True)$/;"	kind:variable	line:10
-port	../memoir/forms.py	/^    port = poplib.POP3_SSL_PORT$/;"	kind:variable	line:37
+photo	../profiles/models.py	/^    photo=models.ImageField(upload_to)$/;"	kind:variable	line:24
+pop_conn	../webmail_crawler.py	/^pop_conn = poplib.POP3_SSL('dikrong.iitg.ernet.in')$/;"	kind:variable	line:4
+pop_conn	../webmail_crawlers.py	/^pop_conn = poplib.POP3_SSL('dikrong.iitg.ernet.in')$/;"	kind:variable	line:4
+professor	../profiles/models.py	/^    professor=models.OneToOneField(Professor,help_text="a",related_name="categories")$/;"	kind:variable	line:31
+search_text	../profiles/models.py	/^    search_text=models.CharField(max_length=1000,help_text="Search keyword for crawling mail")/;"	kind:variable	line:35
 settings.py	../memoir/settings.py	1;"	kind:file	line:1
 signup	../profiles/views.py	/^def signup(request):$/;"	kind:function	line:12
-success_url	../profiles/views.py	/^    success_url = reverse_lazy('home')$/;"	kind:variable	line:46
-template_name	../profiles/views.py	/^    template_name = 'profiles\/home.html'$/;"	kind:variable	line:54
-template_name	../profiles/views.py	/^    template_name = 'profiles\/login.html'$/;"	kind:variable	line:45
+str	../crawl.py	/^    			str = str + " " + word.decode('cp1252')$/;"	kind:variable	line:43
+str	../crawl.py	/^    str=""$/;"	kind:variable	line:47
+str	../crawl.py	/^str=""$/;"	kind:variable	line:9
+str	../webmail_crawler.py	/^			str=str+"\\n"+i.decode('cp1252')$/;"	kind:variable	line:19
+str	../webmail_crawler.py	/^	str=""$/;"	kind:variable	line:25
+str	../webmail_crawler.py	/^str=""$/;"	kind:variable	line:10
+str	../webmail_crawlers.py	/^			str=str+"\\n"+i.decode('cp1252')$/;"	kind:variable	line:19
+str	../webmail_crawlers.py	/^	str=""$/;"	kind:variable	line:25
+str	../webmail_crawlers.py	/^str=""$/;"	kind:variable	line:10
 tests.py	../profiles/tests.py	1;"	kind:file	line:1
 urlpatterns	../memoir/urls.py	/^urlpatterns = [$/;"	kind:variable	line:24
 urlpatterns	../profiles/urls.py	/^urlpatterns = [$/;"	kind:variable	line:6
 urls.py	../memoir/urls.py	1;"	kind:file	line:1
 urls.py	../profiles/urls.py	1;"	kind:file	line:1
 user	../profiles/models.py	/^    user=models.OneToOneField(User,help_text="a",related_name="professor")$/;"	kind:variable	line:20
-username	../memoir/forms.py	/^    username = forms.CharField(max_length=254, label=_('Webmail'))$/;"	kind:variable	line:33
 views.py	../profiles/views.py	1;"	kind:file	line:1
+webmail_crawler.py	../webmail_crawler.py	1;"	kind:file	line:1
+webmail_crawlers.py	../webmail_crawlers.py	1;"	kind:file	line:1
+word	../crawl.py	/^    word=data[0][1]$/;"	kind:variable	line:16
 wsgi.py	../memoir/wsgi.py	1;"	kind:file	line:1
+x	../crawl.py	/^    	x=word.decode('cp1252')$/;"	kind:variable	line:36
+x	../crawl.py	/^    x=word.decode('cp1252')$/;"	kind:variable	line:17
+x	../webmail_crawler.py	/^			x=i.decode('cp1252')$/;"	kind:variable	line:16
+x	../webmail_crawlers.py	/^			x=i.decode('cp1252')$/;"	kind:variable	line:16
+z	../crawl.py	/^    z=x.split("Content-Type:",1)$/;"	kind:variable	line:27
