@@ -23,7 +23,6 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
 
-
 def home(request):
     department=Department.objects.all()
     return render(request,'index.html', {'department_list':department})

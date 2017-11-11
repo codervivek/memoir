@@ -16,7 +16,7 @@ INSTALLED_APPS	../memoir/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line
 LANGUAGE_CODE	../memoir/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:117
 LOGIN_REDIRECT_URL	../memoir/settings.py	/^LOGIN_REDIRECT_URL = "\/"$/;"	kind:variable	line:131
 LOGOUT_REDIRECT_URL	../memoir/settings.py	/^LOGOUT_REDIRECT_URL = "\/"$/;"	kind:variable	line:132
-MEDIA_ROOT	../memoir/settings.py	/^MEDIA_ROOT = '\/home\/vivekraj\/django_projects\/memoir\/media'$/;"	kind:variable	line:136
+MEDIA_ROOT	../memoir/settings.py	/^MEDIA_ROOT = '\/home\/namit\/memoir\/media'$/;"	kind:variable	line:136
 MEDIA_URL	../memoir/settings.py	/^MEDIA_URL = '\/media\/'$/;"	kind:variable	line:137
 MIDDLEWARE	../memoir/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:43
 Migration	../profiles/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
@@ -48,7 +48,7 @@ fields	../profiles/migrations/0002_professor.py	/^            fields=[$/;"	kind:
 first_name	../memoir/forms.py	/^    first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')$/;"	kind:variable	line:6
 forms.py	../memoir/forms.py	1;"	kind:file	line:1
 get_absolute_url	../profiles/models.py	/^    def get_absolute_url(self):$/;"	kind:member	line:15
-home	../profiles/views.py	/^def home(request):$/;"	kind:function	line:27
+home	../profiles/views.py	/^def home(request):$/;"	kind:function	line:26
 initial	../profiles/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:10
 last_name	../memoir/forms.py	/^    last_name = forms.CharField(max_length=30, required=False, help_text='Optional.')$/;"	kind:variable	line:7
 mail	../profiles/models.py	/^    mail=models.CharField(max_length=200, help_text="Enter email id to be searched")/;"	kind:variable	line:24
