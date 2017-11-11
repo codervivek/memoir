@@ -34,7 +34,11 @@
             {% endif %}
             {% if user.is_authenticated %}
             <a href="{% url 'logout'%}?next={{request.path}}" class="btn btn-light">Logout</a>
+<<<<<<< HEAD
+            <a href="#" class="btn btn-light">{{user.username}}</a>
+=======
             <a  class="btn btn-light">{{user.username}}</a>
+>>>>>>> b8b373a5a37b07b81aa1c2d57eb8ff81303cb27f
             {% endif %}
             <form class="form-inline my-2 my-lg-0" id="searchform" action="" method="get" accept-charset="utf-8">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="q" id="searchbox">
