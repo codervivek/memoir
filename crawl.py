@@ -11,17 +11,25 @@ a=1
 for num in data[0].split():
     typ, data = M.fetch(num, '(RFC822)')
     print("\nMessage ", a)
-    for word in data[0][1].split():
-    	x=word.decode('cp1252')
-    	if "Importance" in x:
-    		flag=1
-    	elif flag==1:
-    		if "Content-Type" in word.decode('cp1252'):
-    			break 
-    		else :
-    			str = str + " " + word.decode('cp1252')
+    # for word in data[0][1].split():
+    word=data[0][1]
+    x=word.decode('cp1252')
+    # if "Importance" in x:
+    #     flag=1
+    #     print("xyz")
+    # elif flag==1:
+    # 	if "Content-Type" in word.decode('cp1252'):
+    #         # if not "Content-Type: text/plain" in word.decode('cp1252'):
+    #         break
+    # 	else :
+    # 		str = str + " " + word.decode('cp1252')
+    z=x.split("Content-Type:",1)
+    for y in z:
+        if not (len(y)>20000):
+            print(y)
+    # print x.split("Content-Type: text/plain",1)[0] 
     a=a+1
-    print(str)
+    # print(str)
     str=""
     flag=0
     flag1=0
