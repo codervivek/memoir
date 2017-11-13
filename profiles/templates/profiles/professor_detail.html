@@ -8,13 +8,15 @@
 
 {% block full-content %}
 <br>
-<div class="text-center"><h1>{{professor.user.first_name}} {{professor.user.last_name}}</h1></div>
 <div class="row">
     <div class="col-3">
+        <br><br>
             <div class="text-center">
         <div class="card" style="width: 100%;">
                     <img class="card-img-top" src="{{professor.photo.url}}" alt="Card image cap">
                     <div class="card-body">
+                        <div class="text-center"><h1>{{professor.user.first_name}} {{professor.user.last_name}}</h1></div><br>
+                        <p class="card-text">{{professor.post}}</p>
                             <p class="card-text">Webmail: {{professor.mail}}</p>
                             <p class="card-text">Department: {{professor.department.name}}</p>
                     </div>
@@ -23,21 +25,94 @@
     </div>
     <div class="col-8">
 
-
-            <ul class="nav nav-tabs">
+            <br>
+            <ul class="nav nav-tabs justify-content-center">
                     <li class="nav-item">
-                      <a class="nav-link active" href="#">Active</a>
+                      <a class="nav-link active" href="{{ professor.get_absolute_url }}">About</a>
                     </li>
+                    {% for cat in professor.category_set.all %}
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
+                      <a class="nav-link" href="{{ cat.get_absolute_url }}">{{cat.name}}</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                  </ul>
+                    {% endfor %}
+            </ul>
+            <div class="card">
+                <div class="card-body">
+                    <div class="container">
+                            <div class="text-center"><h4 class="card-title">Basic details</h4></div><hr>
+                                {% comment %} <div class="row">
+                                    <div class="col-3">
+                                        Name:
+                                    </div>
+                                    <div class="col-9">
+                                        {{professor.user.firstname}} {{professor.user.lastname}}
+                                    </div>
+                                </div><br> {% endcomment %}
+                                {% comment %} <div class="row">
+                                    <div class="col-3">
+                                        Mobile Number:
+                                    </div>
+                                    <div class="col-9">
+                                        932894328908
+                                    </div>
+                                </div><br>
+                                <div class="row">
+                                    <div class="col-3">
+                                        Email id:
+                                    </div>
+                                    <div class="col-9">
+                                    {{professor.user.email}}
+                                    </div>
+                                </div> {% endcomment %}
+                                <div class="row text-center">
+                                  
+                                  <div class="col-4">
+                                    <h5>Contact</h5><hr>
+                                    Mobile Number:  {{professor.phone_home}}<br>
+                                    Email Id: {{professor.user.email}}
+                                    
+                                  </div>
+                                  <div class="col-4">
+                                      <h5>Office</h5><hr>
+                                      Room Number: {{professor.room_no}}<br>
+                                      Landline: {{professor.phone_office}}
+                                    </div>
+                                    <div class="col-4">
+                                        <h5>Residence</h5><hr>
+                                        Qtr Number: {{professor.qtr_no}}<br>
+                                        Phone: {{professor.phone_home}}
+                                      </div>
+                                </div>
+                            </div><br><hr>
+                    <div class="container">
+                        <div class="text-center"><h4 class="card-title">Education</h4></div><hr>
+                        <div class="text-center">
+                            
+                                {% for e in professor.education_set.all %}
+                                  <div class="z">{{e.degree}}</div>
+                                  {{e.description}}
+                                  <br><br>
+                                {% endfor %}
+                            
+                            
+                        </div><br>
+                    </div>
+                    <hr>
+                    <div class="container">
+                        <div class="text-center"><h4 class="card-title">Work Experience</h4></div><hr>
+                        <div class="text-center">
+                            
+                                {% for w in professor.work_set.all %}
+                                  <div class="z">{{w.post}}</div>
+                                  {{w.description}}
+                                  <br><br>
+                                {% endfor %}
+                            
+                            
+                        </div><br>
+                    </div>
+                        
+            
         </div>
       </div>
     </div>

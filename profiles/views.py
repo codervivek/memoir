@@ -36,3 +36,7 @@ class DepartmentListView(generic.ListView):
 class DepartmentDetailView(generic.DetailView):
     model=Department
 
+class CategoryDetailView(generic.DetailView):
+    model=Category
+
+

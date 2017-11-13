@@ -17,7 +17,7 @@ class Department(models.Model):
 
 class Professor(models.Model):
 
-    user=models.OneToOneField(User,help_text="a")
+    user=models.OneToOneField(User,help_text="a",related_name='professor')
 
     department=models.ForeignKey(Department,help_text="Enter your department")
 
@@ -26,6 +26,18 @@ class Professor(models.Model):
     mail=models.CharField(max_length=200, help_text="Enter email id to be searched", blank=True, null=True)
 
     mail_password=models.CharField(max_length=200,help_text="Enter your password", blank=True, null=True)
+
+    post=models.CharField(max_length=200, help_text="Enter your post", blank=True, null=True)
+
+    room_no=models.CharField(max_length=200, help_text="Enter your room no.", blank=True, null=True)
+
+    phone_office=models.CharField(max_length=200, help_text="Enter your office phone no.", blank=True, null=True)
+
+    phone_home=models.CharField(max_length=200, help_text="Enter your home phone no.", blank=True, null=True)
+
+    qtr_no=models.CharField(max_length=200, help_text="Enter your qtr no.", blank=True, null=True)
+
+
 
     def __str__(self):
         return self.user.username
@@ -43,7 +55,10 @@ class Category(models.Model):
     search_text=models.CharField(max_length=1000,help_text="Search keyword for crawling mail")
 
     def __str__(self):
-        return self.name
+        return self.professor.user.username+" "+self.name
+
+    def get_absolute_url(self):
+        return reverse('category-detail', args=[str(self.id)])
 
 class CategoryList(models.Model):
 
@@ -53,3 +68,25 @@ class CategoryList(models.Model):
 
     def __str__(self):
         return self.data[:20]
+
+class Education(models.Model):
+
+    degree=models.CharField(max_length=200, help_text="Enter your degree", blank=True, null=True)
+
+    professor=models.ForeignKey(Professor, help_text="b")
+
+    description=models.CharField(max_length=200, help_text="Enter degree description", blank=True, null=True)
+
+    def __str__(self):
+        return self.degree
+
+class Work(models.Model):
+
+    post=models.CharField(max_length=200, help_text="Enter your degree", blank=True, null=True)
+
+    professor=models.ForeignKey(Professor, help_text="b")
+
+    description=models.CharField(max_length=200, help_text="Enter degree description", blank=True, null=True)
+
+    def __str__(self):
+        return self.post
