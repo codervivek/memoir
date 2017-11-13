@@ -42,129 +42,129 @@
                     {% endfor %}
                   </ul>
                   <div class="card">
-                        <div class="card-header text-center">
-                          <h1>{{ seller.user.username}}</h1>
+    <div class="card-header text-center">
+      <h1>{{ seller.user.username}}</h1>
+    </div>
+    <div class="card-body">
+        <div class="container">
+                <div class="text-center"><h4 class="card-title">Basic details</h4></div><hr>
+                    <div class="row">
+                        <div class="col-3">
+                            Name:
                         </div>
-                        <div class="card-body">
-                            <div class="container">
-                                    <div class="text-center"><h4 class="card-title">Basic details</h4></div><hr>
-                                        <div class="row">
-                                            <div class="col-3">
-                                                Name:
-                                            </div>
-                                            <div class="col-9">
-                                                {{seller.user.firstname}} {{seller.user.lastname}}
-                                            </div>
-                                        </div><br>
-                                        <div class="row">
-                                            <div class="col-3">
-                                                Mobile Number:
-                                            </div>
-                                            <div class="col-9">
-                                                {{seller.phone_number}}
-                                            </div>
-                                        </div><br>
-                                        <div class="row">
-                                            <div class="col-3">
-                                                Email id:
-                                            </div>
-                                            <div class="col-9">
-                                            {{seller.user.email}}
-                                            </div>
-                                        </div>
-                                    </div><br><hr>
-                            <div class="container">
-                                <div class="text-center"><h4 class="card-title">Business details</h4></div><hr>
-                                <div class="row">
-                                    <div class="col-3">
-                                        Business Name:
-                                    </div><br>
-                                    <div class="col-9">
-                                        {{seller.business_name}}
-                                    </div>
-                                </div><br>
-                                <div class="row">
-                                    <div class="col-3">
-                                        Business Address
-                                    </div>
-                                    <div class="col-9">
-                                        {{seller.business_address}}
-                                    </div>
-                                </div><br><hr>
-                            
-                            </div>
-                            <div class="container">
-                                    <div class="text-center"><h4 class="card-title">Financial details</h4></div><hr>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            Pan card name:
-                                        </div><br>
-                                        <div class="col-9">
-                                            {{seller.pan_name}}
-                                        </div>
-                                    </div><br>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            Pan card number:
-                                        </div>
-                                        <div class="col-9">
-                                            {{seller.pan_card_number}}
-                                        </div>
-                                    </div><br>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            Pan card proof:
-                                        </div>
-                                        <div class="col-9">
-                                        <img src='{{seller.pan_proof.url}}' class="img-thumbnail" style="max-width: 20rem;" href='{{seller.pan_proof.url}}'>
-                                        </div>
-                                    </div>
-                                </div><br><hr>
-                                <div class="container">
-                                    <div class="text-center"><h4 class="card-title">Warehouse details</h4></div><hr>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            Warehouse address:
-                                        </div>
-                                        <div class="col-9">
-                                            {{seller.warehouse_address}}
-                                        </div>
-                                    </div><br>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            Warehouse proof:
-                                        </div>
-                                        <div class="col-9">
-                                                <img src='{{seller.warehouse_address_proof.url}}' class="img-thumbnail" style="max-width: 20rem;" href='{{seller.pan_proof.url}}'>        
-                                        </div>
-                                    </div><br>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            Email id:
-                                        </div>
-                                        <div class="col-9">
-                                        {{seller.user.email}}
-                                        </div>
-                                    </div>
-                                </div><br><hr>
-                                <div class="container">
-                                    <div class="text-center"><h4 class="card-title">Products details:</h4></div><hr>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            Products sold:
-                                        </div>
-                                        <div class="col-9">
-                                            {% for product in seller.selling_subcategories.all %}
-                                            {{product.name}}<br>
-                                            {% endfor %}
-                                        </div>
-                                    </div><br>
-                                <hr>
-                          <div class="text-center"><a href="{% url 'seller_update' pk=seller.id %}" class="btn btn-primary btn-lg">Edit Details</a>
-                            <a href="{% url 'seller_dashboard' %}" class="btn btn-primary btn-lg">Dashboard</a></div>
+                        <div class="col-9">
+                            {{seller.user.firstname}} {{seller.user.lastname}}
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-3">
+                            Mobile Number:
+                        </div>
+                        <div class="col-9">
+                            {{seller.phone_number}}
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-3">
+                            Email id:
+                        </div>
+                        <div class="col-9">
+                        {{seller.user.email}}
+                        </div>
                     </div>
-                      </div><br><br>
-                    
+                </div><br><hr>
+        <div class="container">
+            <div class="text-center"><h4 class="card-title">Business details</h4></div><hr>
+            <div class="row">
+                <div class="col-3">
+                    Business Name:
+                </div><br>
+                <div class="col-9">
+                    {{seller.business_name}}
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-3">
+                    Business Address
+                </div>
+                <div class="col-9">
+                    {{seller.business_address}}
+                </div>
+            </div><br><hr>
+        
+        </div>
+        <div class="container">
+                <div class="text-center"><h4 class="card-title">Financial details</h4></div><hr>
+                <div class="row">
+                    <div class="col-3">
+                        Pan card name:
+                    </div><br>
+                    <div class="col-9">
+                        {{seller.pan_name}}
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-3">
+                        Pan card number:
+                    </div>
+                    <div class="col-9">
+                        {{seller.pan_card_number}}
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-3">
+                        Pan card proof:
+                    </div>
+                    <div class="col-9">
+                    <img src='{{seller.pan_proof.url}}' class="img-thumbnail" style="max-width: 20rem;" href='{{seller.pan_proof.url}}'>
+                    </div>
+                </div>
+            </div><br><hr>
+            <div class="container">
+                <div class="text-center"><h4 class="card-title">Warehouse details</h4></div><hr>
+                <div class="row">
+                    <div class="col-3">
+                        Warehouse address:
+                    </div>
+                    <div class="col-9">
+                        {{seller.warehouse_address}}
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-3">
+                        Warehouse proof:
+                    </div>
+                    <div class="col-9">
+                            <img src='{{seller.warehouse_address_proof.url}}' class="img-thumbnail" style="max-width: 20rem;" href='{{seller.pan_proof.url}}'>        
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-3">
+                        Email id:
+                    </div>
+                    <div class="col-9">
+                    {{seller.user.email}}
+                    </div>
+                </div>
+            </div><br><hr>
+            <div class="container">
+                <div class="text-center"><h4 class="card-title">Products details:</h4></div><hr>
+                <div class="row">
+                    <div class="col-3">
+                        Products sold:
+                    </div>
+                    <div class="col-9">
+                        {% for product in seller.selling_subcategories.all %}
+                        {{product.name}}<br>
+                        {% endfor %}
+                    </div>
+                </div><br>
+            <hr>
+      <div class="text-center"><a href="{% url 'seller_update' pk=seller.id %}" class="btn btn-primary btn-lg">Edit Details</a>
+        <a href="{% url 'seller_dashboard' %}" class="btn btn-primary btn-lg">Dashboard</a></div>
+</div>
+  </div><br><br>
+
         </div>
       </div>
     </div>
