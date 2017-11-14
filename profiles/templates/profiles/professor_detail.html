@@ -16,10 +16,13 @@
                     <img class="card-img-top" src="{{professor.photo.url}}" alt="Card image cap">
                     <div class="card-body">
                         <div class="text-center"><h1>{{professor.user.first_name}} {{professor.user.last_name}}</h1></div><br>
-                        <p class="card-text">{{professor.post}}</p>
-                            <p class="card-text">Webmail: {{professor.mail}}</p>
-                            <p class="card-text">Department: {{professor.department.name}}</p>
-                    </div>
+                        <p class="card-text"><span class="z">{{professor.post}}</span></p>
+                            <p class="card-text"><span class="z">Webmail</span>: {{professor.mail}}</p>
+                            <p class="card-text"><span class="z">Department</span>: {{professor.department.name}}</p>
+                    </div>{% if professor.user.id == user.id %}
+                    <a class="btn btn-dark" href="{% url 'professor_update' professor.id %}">Edit
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </a>{% endif %}
             </div>
     </div>
     </div>
@@ -28,59 +31,43 @@
             <br>
             <ul class="nav nav-tabs justify-content-center">
                     <li class="nav-item">
-                      <a class="nav-link active" href="{{ professor.get_absolute_url }}">About</a>
+                      <a class="nav-link active" href="{{professor.get_absolute_url}}">About
+                      </a>
                     </li>
                     {% for cat in professor.category_set.all %}
                     <li class="nav-item">
                       <a class="nav-link" href="{{ cat.get_absolute_url }}">{{cat.name}}</a>
                     </li>
                     {% endfor %}
+                    {% if professor.user.id == user.id %}
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'category_create' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    </a>
+                    </li>
+                    {% endif %}
             </ul>
             <div class="card">
                 <div class="card-body">
                     <div class="container">
                             <div class="text-center"><h4 class="card-title">Basic details</h4></div><hr>
-                                {% comment %} <div class="row">
-                                    <div class="col-3">
-                                        Name:
-                                    </div>
-                                    <div class="col-9">
-                                        {{professor.user.firstname}} {{professor.user.lastname}}
-                                    </div>
-                                </div><br> {% endcomment %}
-                                {% comment %} <div class="row">
-                                    <div class="col-3">
-                                        Mobile Number:
-                                    </div>
-                                    <div class="col-9">
-                                        932894328908
-                                    </div>
-                                </div><br>
-                                <div class="row">
-                                    <div class="col-3">
-                                        Email id:
-                                    </div>
-                                    <div class="col-9">
-                                    {{professor.user.email}}
-                                    </div>
-                                </div> {% endcomment %}
+                               
                                 <div class="row text-center">
                                   
                                   <div class="col-4">
                                     <h5>Contact</h5><hr>
-                                    Mobile Number:  {{professor.phone_home}}<br>
-                                    Email Id: {{professor.user.email}}
+                                    <span class="z">Mobile Number</span>:  {{professor.phone_home}}<br>
+                                    <span class="z">Email Id</span>: {{professor.user.email}}
                                     
                                   </div>
                                   <div class="col-4">
                                       <h5>Office</h5><hr>
-                                      Room Number: {{professor.room_no}}<br>
-                                      Landline: {{professor.phone_office}}
+                                      <span class="z" >Room Number</span>: {{professor.room_no}}<br>
+                                      <span class="z">Landline</span> {{professor.phone_office}}
                                     </div>
                                     <div class="col-4">
                                         <h5>Residence</h5><hr>
-                                        Qtr Number: {{professor.qtr_no}}<br>
-                                        Phone: {{professor.phone_home}}
+                                        <span class="z">Qtr Number</span>: {{professor.qtr_no}}<br>
+                                        <span class="z">Phone</span> {{professor.phone_home}}
                                       </div>
                                 </div>
                             </div><br><hr>

@@ -18,7 +18,7 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('home')
+            return redirect('professor_create')
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
@@ -39,4 +39,66 @@ class DepartmentDetailView(generic.DetailView):
 class CategoryDetailView(generic.DetailView):
     model=Category
 
+
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from .forms import ProfessorForm
+
+class ProfessorCreate(CreateView):
+    model = Professor
+    form_class=ProfessorForm
+
+class ProfessorUpdate(UpdateView):
+    model = Professor
+    fields = ['user','department','photo','mail','mail_password','post','room_no','phone_office','phone_home','qtr_no']
+
+class ProfessorDelete(DeleteView):
+    model = Professor
+
+class CategoryCreate(CreateView):
+    model = Category
+    fields = ['professor','name','search_text','to_crawl']
+
+class CategoryUpdate(UpdateView):
+    model = Category
+    fields = ['search_text','to_crawl']
+
+class CategoryDelete(DeleteView):
+    model = Category
+    def get_success_url(self):
+        professor = self.object.professor
+        return reverse_lazy( 'professor-detail', kwargs={'pk': professor.id})
+
+# class CategoryListCreate(CreateView):
+#     model = CategoryList
+#     fields = ['category','data']
+
+class CategoryListUpdate(UpdateView):
+    model = CategoryList
+    fields = ['data']
+
+class CategoryListDelete(DeleteView):
+    model = CategoryList
+    def get_success_url(self):
+        category = self.object.category
+        return reverse_lazy( 'category-detail', kwargs={'pk': category.id})
+
+from .forms import CategoryListForm
+from django.shortcuts import redirect
+
+
+def categorylist_create(request,pk):
+    if request.method=='POST':
+        form=CategoryListForm(request.POST)
+        if form.is_valid():
+            data=form.cleaned_data['data']
+            cat=Category.objects.get(id=pk)
+            new_cat_list=CategoryList.objects.create(category=cat,data=data)
+            new_cat_list.save()
+            return redirect('category-detail',pk=pk)
+        else:
+            form=CategoryListForm()
+    else:
+        form=CategoryListForm()
+    return render(request,'profiles/categorylist_form.html',context={'form':form})
 
