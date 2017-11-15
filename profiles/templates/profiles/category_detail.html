@@ -16,9 +16,9 @@
                     <img class="card-img-top" src="{{category.professor.photo.url}}" alt="Card image cap">
                     <div class="card-body">
                             <div class="text-center"><h1>{{category.professor.user.first_name}} {{category.professor.user.last_name}}</h1></div><br>
-                            <p class="card-text">{{category.professor.post}}</p>
-                            <p class="card-text">Webmail: {{category.professor.mail}}</p>
-                            <p class="card-text">Department: {{category.professor.department.name}}</p>
+                            <p class="card-text"><span class="z">{{category.professor.post}}</span></p>
+                            <p class="card-text"><span class="z">Webmail</span>: {{category.professor.mail}}</p>
+                            <p class="card-text"><span class="z">Department</span>: {{category.professor.department.name}}</p>
                     </div>
                     {% if category.professor.user.id == user.id %}
                     <a class="btn btn-dark" href="{% url 'professor_update' category.professor.id %}">Edit

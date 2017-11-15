@@ -74,12 +74,35 @@
                     <div class="container">
                         <div class="text-center"><h4 class="card-title">Education</h4></div><hr>
                         <div class="text-center">
-                            
+{% comment %}                             
                                 {% for e in professor.education_set.all %}
                                   <div class="z">{{e.degree}}</div>
                                   {{e.description}}
+                                  {% if professor.user.id == user.id %}
+                                  <a class="btn btn-dark" href="{% url 'education_delete' e.id%}">
+                                        <i class="fa fa-trash" aria-hidden="true">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                                {% endif %}
+
                                   <br><br>
+                                {% endfor %} {% endcomment %}
+                                {% for e in professor.education_set.all %}
+                                <div class="z"> {{e.degree}}</div>
+                                    {{e.description}}
+                                    {% if e.professor.user.id == user.id %}
+                                      {% comment %} <a href="{% url 'categorylist_update' x.id %}"><i class="fa fa-pencil" aria-hidden="true"></i></a> {% endcomment %}
+                                      <a href="{% url 'education_delete' e.id %}"><i class="fa fa-trash y" aria-hidden="true"></i></a>
+                                      {% endif %}
+                                  <br><br>
+                                  
                                 {% endfor %}
+                                {% if professor.user.id == user.id %}
+                                <a class="btn btn-dark" href="{% url 'education_create' %}">Add Education
+                                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                </a>
+                                
+                                {% endif %}
                             
                             
                         </div><br>
@@ -90,14 +113,27 @@
                         <div class="text-center">
                             
                                 {% for w in professor.work_set.all %}
-                                  <div class="z">{{w.post}}</div>
-                                  {{w.description}}
+                                <div class="z"> {{w.post}}</div>
+                                    {{w.description}}
+                                    {% if w.professor.user.id == user.id %}
+                                      {% comment %} <a href="{% url 'categorylist_update' x.id %}"><i class="fa fa-pencil" aria-hidden="true"></i></a> {% endcomment %}
+                                      <a href="{% url 'work_delete' w.id %}"><i class="fa fa-trash y" aria-hidden="true"></i></a>
+                                      {% endif %}
                                   <br><br>
+                                  
                                 {% endfor %}
+                                {% if professor.user.id == user.id %}
+                                <a class="btn btn-dark" href="{% url 'work_create' %}">Add Work <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                        
+                                    {% comment %} <i class="fa fa-pencil" aria-hidden="true"></i> {% endcomment %}
+                                </a>
+                                
+                                {% endif %}
                             
                             
                         </div><br>
                     </div>
+                    
                         
             
         </div>

@@ -8,7 +8,7 @@ from django.db.models import Max
 from django.views import generic
 from django.contrib.auth.models import User
 from memoir.forms import SignUpForm
-from .models import Department,Professor,Category,CategoryList
+from .models import Department,Professor,Category,CategoryList,Education,Work
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -54,6 +54,34 @@ class ProfessorUpdate(UpdateView):
 
 class ProfessorDelete(DeleteView):
     model = Professor
+
+class EducationCreate(CreateView):
+    model = Education
+    fields = ['professor','degree','description']
+
+class EducationUpdate(UpdateView):
+    model = Education
+    fields = ['degree','description']
+
+class EducationDelete(DeleteView):
+    model = Education
+    def get_success_url(self):
+        professor = self.object.professor
+        return reverse_lazy( 'professor-detail', kwargs={'pk': professor.id})
+
+class WorkCreate(CreateView):
+    model = Work
+    fields = ['professor','post','description']
+
+class WorkUpdate(UpdateView):
+    model = Work
+    fields = ['post','description']
+
+class WorkDelete(DeleteView):
+    model = Work
+    def get_success_url(self):
+        professor = self.object.professor
+        return reverse_lazy( 'professor-detail', kwargs={'pk': professor.id})
 
 class CategoryCreate(CreateView):
     model = Category
@@ -101,4 +129,18 @@ def categorylist_create(request,pk):
     else:
         form=CategoryListForm()
     return render(request,'profiles/categorylist_form.html',context={'form':form})
+from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
 
+class SearchListView(generic.ListView):
+    model = Professor
+
+    def get_queryset(self):
+        qs = Professor.objects.all()
+        keywords = self.request.GET.get('q')
+        if keywords:
+            query = SearchQuery(keywords)
+            vector = SearchVector('user__username', 'user__first_name', 'user__last_name')
+            qs = qs.annotate(search=vector).filter(search=query)
+            qs = qs.annotate(rank=SearchRank(vector, query)).order_by('-rank')
+
+        return qs

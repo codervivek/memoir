@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         {% block font %}{% endblock %}
-        {% load static %}<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        {% load static %}<link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
@@ -37,9 +37,9 @@
             {% if user.is_authenticated %}
             <a href="{{user.professor.get_absolute_url}}" class="btn btn-light"><img src="{{ user.professor.photo.url }}" class="img-fluid rounded-circle specialimage" alt="My photo"></a>
             <a href="{{user.professor.get_absolute_url}}" class="btn btn-light">{{user.username}}</a>
-            <a href="{% url 'logout'%}?next={{request.path}}" class="btn btn-light">Logout</a>
+            <a href="{% url 'logout'%}?next={% url 'home' %}" class="btn btn-light">Logout</a>
             {% endif %}
-            <form class="form-inline my-2 my-lg-0" id="searchform" action="" method="get" accept-charset="utf-8">
+            <form class="form-inline my-2 my-lg-0" id="searchform" action="{% url 'search_list_view' %}" method="get" accept-charset="utf-8">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="q" id="searchbox">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>

@@ -1,0 +1,48 @@
+{% extends "base_generic.html" %}
+
+
+
+{% block font %}
+<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet"> 
+{% endblock  %}
+{% block content %}
+<div class="text-center"><br><h1>Add/edit Education</h1><small class="text-muted">Fill in the details about the Education</small></div><hr>
+<br>
+<div class="card">
+    <div class="card-body">
+            <form action="" method="post" enctype="multipart/form-data">
+                  <div class="form-group">
+                  {% csrf_token %}
+                  <!-- <table>
+                  {{ form.as_table }}
+                  </table> -->
+                    {% for field in form %}
+                    {% if not field.help_text == "b" %}
+                        <div class="form-group row">
+                            <div class="col-3">
+                              <h6>{{ field.label_tag }}</h6>
+                            </div> 
+                            <div class="col-5">{{ field }}</div> 
+                            {% if field.help_text %}<div class="form-helptext text-muted col-4">{{ field.help_text }}</div>{% endif %}
+                            {% if field.errors %}
+                            <div class="col-12">
+                                <br>
+                                <ul class="form-errors alert alert-danger">
+                                {% for error in field.errors %}
+                                    <li><strong>{{ error|escape }}</strong></li>
+                                {% endfor %}
+                                </ul>
+                              </div>
+                            {% endif %}
+                          </div>
+                        {% endif %}<hr>
+                    {% endfor %}
+                  <input name="professor" type="hidden" value="{{user.professor.id}}"/>
+                  <div class="text-center">
+                  <input type="submit" value="Submit" class="btn btn-lg btn-primary" id="submit"/></div>
+                  </div>
+              </form>
+        </div> 
+    </div>
+        <br>
+{% endblock %}

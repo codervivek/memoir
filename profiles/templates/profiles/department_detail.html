@@ -1,29 +1,29 @@
-{% extends "base_generic.html" %}
-{% load static %}
-{% block font %}
-<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet"> 
-{% endblock %}
-{% block css %}<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />{% endblock %}
-{% block title %}{{department.name}}{% endblock %}
+    {% extends "base_generic.html" %}
+    {% load static %}
+    {% block font %}
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet"> 
+    {% endblock %}
+    {% block css %}<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />{% endblock %}
+    {% block title %}{{department.name}}{% endblock %}
 
-{% block content %}
-<br>
-<div class="text-center"><h1>Department Faculty</h1></div><hr><br>
-<div class="row">    
-{% for professor in department.professor_set.all %}
-        <div class="col-4">
-            <div class="card card-css" style="width: 20rem;">
-                <div class="xyz">
-                        <a href="{{professor.get_absolute_url}}"><img class="card-img-top" src="{{professor.photo.url}}" alt="{{professor.user.username}} Profile Pic"></a>
+    {% block content %}
+    <br>
+    <div class="text-center"><h1>Department Faculty</h1></div><hr><br>
+    <div class="row">    
+    {% for professor in department.professor_set.all %}
+            <div class="col-4">
+                <div class="card card-css" style="width: 20rem;">
+                    <div class="xyz">
+                            <a href="{{professor.get_absolute_url}}"><img class="card-img-top" src="{{professor.photo.url}}" alt="{{professor.user.username}} Profile Pic"></a>
+                    </div>
+                    <div class="card-body abc text-center">
+                    <h4 class="card-title">{{professor.user.firstname}} {{professor.user.lastname}}</h4>
+                    <p class="card-text"><span class="z">Webmail</span>: {{professor.mail}}</p>
+                    <p class="card-text"><span class="z">Department</span>: {{professor.department.name}}</p>
+                    <a href="{{professor.get_absolute_url}}" class="btn btn-primary">View Profile</a>
                 </div>
-                <div class="card-body abc text-center">
-                <h4 class="card-title">{{professor.user.firstname}} {{professor.user.lastname}}</h4>
-                <p class="card-text">Webmail: {{professor.mail}}</p>
-                <p class="card-text">Department: {{professor.department.name}}</p>
-                <a href="{{professor.get_absolute_url}}" class="btn btn-primary">View Profile</a>
             </div>
-        </div>
-        </div> 
-{% endfor %}
-</div>
-{% endblock %}
+            </div> 
+    {% endfor %}
+    </div>
+    {% endblock %}
