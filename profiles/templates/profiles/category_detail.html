@@ -8,6 +8,7 @@
 
 {% block full-content %}
 <br>
+{{category.crawl_category}}
 <div class="row">
     <div class="col-3">
         <br><br>
@@ -60,13 +61,21 @@
                       <div class="container">
                           <ul><hr>
                           {% for x in category.categorylist_set.all %}
+                          {% if x.approved or x.category.professor.user.id == user.id %}
                           <li>{{x.data}}
                               {% if x.category.professor.user.id == user.id %}
+                              {% if not x.approved %}
+                              <a href="{% url 'approve' x.id category.id %}"><i class="fa fa-check w" aria-hidden="true"></i></a>
+                              {% endif %}
                                 <a href="{% url 'categorylist_update' x.id %}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                                 <a href="{% url 'categorylist_delete' x.id %}"><i class="fa fa-trash y" aria-hidden="true"></i></a>
+                                
+                                
                                 {% endif %}
                             </li>
-                                <hr>
+                            <hr>
+                            {% endif %}
+                                
                           {% endfor %}
                         </ul>
                         <div class="text-center">

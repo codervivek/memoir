@@ -50,7 +50,7 @@ class ProfessorCreate(CreateView):
 
 class ProfessorUpdate(UpdateView):
     model = Professor
-    fields = ['user','department','photo','mail','mail_password','post','room_no','phone_office','phone_home','qtr_no']
+    fields = ['user','department','photo','mail','mail_password','mail_server','post','room_no','phone_office','phone_home','qtr_no']
 
 class ProfessorDelete(DeleteView):
     model = Professor
@@ -144,3 +144,24 @@ class SearchListView(generic.ListView):
             qs = qs.annotate(rank=SearchRank(vector, query)).order_by('-rank')
 
         return qs
+
+def approve(request,pk,ck):
+    x=CategoryList.objects.get(id=pk)
+    x.approved=True
+    print(x.data)
+    x.save()
+    return render(request, 'approve.html',{'x':ck})
+
+def post_approve(request,pk):
+    x=Professor.objects.get(id=pk)
+    x.post=x.temp_post
+    a=x.post
+    x.temp_post=None
+    x.save()
+    return render(request, 'post_approve.html',{'x':pk,'a':a})
+
+def post_delete(request,pk):
+    x=Professor.objects.get(id=pk)
+    x.temp_post=None
+    x.save()
+    return render(request, 'post_delete.html',{'x':pk})

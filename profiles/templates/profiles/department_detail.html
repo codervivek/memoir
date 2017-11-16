@@ -17,7 +17,7 @@
                             <a href="{{professor.get_absolute_url}}"><img class="card-img-top" src="{{professor.photo.url}}" alt="{{professor.user.username}} Profile Pic"></a>
                     </div>
                     <div class="card-body abc text-center">
-                    <h4 class="card-title">{{professor.user.firstname}} {{professor.user.lastname}}</h4>
+                    <h4 class="card-title">{{professor.user.first_name}} {{professor.user.last_name}}</h4>
                     <p class="card-text"><span class="z">Webmail</span>: {{professor.mail}}</p>
                     <p class="card-text"><span class="z">Department</span>: {{professor.department.name}}</p>
                     <a href="{{professor.get_absolute_url}}" class="btn btn-primary">View Profile</a>

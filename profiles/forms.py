@@ -26,7 +26,7 @@ class CategoryListForm(forms.Form):
 class ProfessorForm(forms.ModelForm):
     class Meta:
         model = Professor
-        fields = ['user','department','photo','mail','mail_password','post','room_no','phone_office','phone_home','qtr_no']
+        fields = ['user','department','photo','mail','mail_password','mail_server','post','room_no','phone_office','phone_home','qtr_no']
         widgets = {
             'mail_password': forms.PasswordInput()
         }

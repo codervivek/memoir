@@ -7,6 +7,7 @@
 {% block title %}{{professor.user.username}}{% endblock %}
 
 {% block full-content %}
+{{professor.crawl_prof}}
 <br>
 <div class="row">
     <div class="col-3">
@@ -22,7 +23,15 @@
                     </div>{% if professor.user.id == user.id %}
                     <a class="btn btn-dark" href="{% url 'professor_update' professor.id %}">Edit
                         <i class="fa fa-pencil" aria-hidden="true"></i>
-                        </a>{% endif %}
+                        </a>
+                        {% if professor.temp_post %}
+                        <div class="alert alert-primary" role="alert">
+                            Have you been recently promoted to {{professor.temp_post}}?
+                            <a href="{% url 'post_approve' professor.id %}" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i></a>
+                            <a href="{% url 'post_delete' professor.id %}" class="btn btn-danger"><i class="fa fa-times" aria-hidden="true"></i></a>                            
+                        </div>
+                          {% endif %}
+                          {% endif %}
             </div>
     </div>
     </div>

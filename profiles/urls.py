@@ -24,4 +24,7 @@ urlpatterns = [
     url(r'^work/update/(?P<pk>\d+)/$', login_required(views.WorkUpdate.as_view()), name='work_update'),
     url(r'^work/delete/(?P<pk>\d+)/$', login_required(views.WorkDelete.as_view()), name='work_delete'),
     url(r'^search/$', views.SearchListView.as_view(), name='search_list_view'),
+    url(r'^approve/(?P<pk>\d+)/(?P<ck>\d+)/$', views.approve, name='approve'),
+    url(r'^post_approve/(?P<pk>\d+)/$', views.post_approve, name='post_approve'),
+    url(r'^post_delete/(?P<pk>\d+)/$', views.post_delete, name='post_delete'),
 ]

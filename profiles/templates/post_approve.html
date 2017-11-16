@@ -1,0 +1,11 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Approved{% endblock %}
+{% block content %}
+<br>
+<hr>
+<div class="text-center">
+<h1>Your current post has been updated to {{a}}.</h1></div>
+<hr>
+<div class="text-center"><a class="btn btn-dark" href="{% url 'professor-detail' x %}">Go back</a></div>
+{% endblock %}
