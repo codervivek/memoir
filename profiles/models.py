@@ -21,7 +21,7 @@ class Professor(models.Model):
 
     department=models.ForeignKey(Department,help_text="Enter your department")
 
-    photo=models.ImageField(upload_to="uploads/photos/", help_text="Upload your profile picture", default="default_pic.png")
+    photo=models.ImageField(upload_to="uploads/photos/", help_text="Upload your profile picture", default="default_pic.png", blank=True, null=True)
 
     mail=models.CharField(max_length=200, help_text="@iitg.ernet.in", blank=True, null=True)
 
@@ -60,10 +60,11 @@ class Professor(models.Model):
         x=Professor.objects.get(id=self.id)
         x.search_start=z['end']
         x.save()
-        for y in z['messages']:
-            w=Professor.objects.get(id=self.id)
-            w.temp_post=y
-            w.save()
+        if z["messages"]:
+            for y in z['messages']:
+                w=Professor.objects.get(id=self.id)
+                w.temp_post=y
+                w.save()
         return ""
 
     def get_absolute_url(self):

@@ -43,10 +43,23 @@ class CategoryDetailView(generic.DetailView):
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .forms import ProfessorForm
+from .crawling import get_cse_info
 
 class ProfessorCreate(CreateView):
     model = Professor
     form_class=ProfessorForm
+    def get_success_url(self):
+        professor = self.object
+        if professor.department.name == "CSE":
+            person=get_cse_info(professor.mail,"uploads/photos/")
+            if person:
+                professor.photo="uploads/photos/"+professor.mail+".jpeg"
+                professor.room_no=person["room"]
+                professor.post=person["post"]
+                professor.phone_office=person["phone"]
+                professor.save()
+                return reverse_lazy( 'professor-detail', kwargs={'pk': professor.id})
+        return reverse_lazy( 'professor_update', kwargs={'pk': professor.id})
 
 class ProfessorUpdate(UpdateView):
     model = Professor

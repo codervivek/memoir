@@ -7,7 +7,9 @@
 {% block title %}{{professor.user.username}}{% endblock %}
 
 {% block full-content %}
+{% if professor.user.id == user.id %}
 {{professor.crawl_prof}}
+{% endif %}
 <br>
 <div class="row">
     <div class="col-3">
