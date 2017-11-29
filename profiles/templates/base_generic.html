@@ -30,7 +30,7 @@
                     </li>
             </ul>
             {% if not user.is_authenticated %}
-            <a href="{% url 'login' %}" class="btn btn-light">Login</a>
+            <a href="{% url 'login_custom' %}" class="btn btn-light">Login</a>
             
             <a href="{% url 'signup'%}" class="btn btn-light">Signup</a>
             {% endif %}

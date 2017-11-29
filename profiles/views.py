@@ -50,7 +50,7 @@ class ProfessorCreate(CreateView):
     form_class=ProfessorForm
     def get_success_url(self):
         professor = self.object
-        if professor.department.name == "CSE":
+        if professor.department.name == "Computer Science and Engineering":
             person=get_cse_info(professor.mail,"uploads/photos/")
             if person:
                 professor.photo="uploads/photos/"+professor.mail+".jpeg"
@@ -178,3 +178,31 @@ def post_delete(request,pk):
     x.temp_post=None
     x.save()
     return render(request, 'post_delete.html',{'x':pk})
+
+from django.conf import settings
+from django.contrib import messages
+import json
+import urllib
+
+def login_custom(request):
+    if(request.POST):
+        username = request.POST['username']
+        password = request.POST['password']
+        recaptcha_response = request.POST.get('g-recaptcha-response')
+        url = 'https://www.google.com/recaptcha/api/siteverify'
+        values = {
+            'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+            'response': recaptcha_response
+        }
+        data = urllib.parse.urlencode(values).encode()
+        req =  urllib.request.Request(url, data=data)
+        response = urllib.request.urlopen(req)
+        result = json.loads(response.read().decode())
+        print(result)
+        user = authenticate(request, username=username, password=password)
+        if result['success'] and user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, 'Please enter correct credentials and check reCaptcha to verify you\'re human')
+    return render(request, 'registration/login.html')

@@ -3,7 +3,14 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<br><br><br><br><br><br><br><br><br><br>
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-danger" role="alert">
+  {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+<br><br>
 <div class="card">
   <div class="card-header"><br>
     <h1 class="text-center">Login</h1>
@@ -11,12 +18,29 @@
   <div class="card-body">
     <form action="" method="post">
             {% csrf_token %}
-          <div class="form-group text-center">
+          {% comment %} <div class="form-group text-center">
           <table>
-          {{ form.as_p }}
-          </table><div class="text-center">
+          {{ form.as_p }} {% endcomment %}
+          <div class="row">
+            <div class="col-4 offset-4">
+          <div class="text-center">
+          <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" name="username" class="form-control" id="username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
+            </div>
+          </div>
+          <br><hr>
+          <script src='https://www.google.com/recaptcha/api.js'></script>
+          <div class="g-recaptcha" data-sitekey="6Lff0ToUAAAAANrk_a2iZXeHwtsC6vjS2OSu2oG5"></div><hr>
+          <div class="text-center">
           <input type="submit" value="Submit" class="btn btn-dark"/></div>
           </div>
+        </div>
+        </div>
       </form>
   </div>
 </div> 

@@ -25,7 +25,7 @@ SECRET_KEY = 'ga4z53i=wdor@5r4epe!f$t*fl8)79&h(unhylexk72z*d@j5g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['172.16.115.46']
 
 
 # Application definition
@@ -135,6 +135,7 @@ LOGOUT_REDIRECT_URL = "/"
 
 
 STATIC_URL = '/static/'
-MEDIA_ROOT = '/home/vivekraj/django_test/memoir/media'
+MEDIA_ROOT = '/home/vivek/Projects/memoir/media'
 MEDIA_URL = '/media/'
 
+GOOGLE_RECAPTCHA_SECRET_KEY = '6Lff0ToUAAAAAIaCSu9IOLqPVC6ynStbVszvf8I7'

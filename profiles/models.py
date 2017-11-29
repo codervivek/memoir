@@ -35,7 +35,7 @@ class Professor(models.Model):
         ('4', 'Dikrong')
     )
 
-    mail_server=models.CharField(max_length=2, choices=SERVERS,blank=True, null=True, default='te', help_text="Select your webmail server")
+    mail_server=models.CharField(max_length=2, choices=SERVERS,blank=True, null=True, default='4', help_text="Select your webmail server")
 
     post=models.CharField(max_length=200, help_text="Enter your post", blank=True, null=True)
 

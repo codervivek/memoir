@@ -27,4 +27,5 @@ urlpatterns = [
     url(r'^approve/(?P<pk>\d+)/(?P<ck>\d+)/$', views.approve, name='approve'),
     url(r'^post_approve/(?P<pk>\d+)/$', views.post_approve, name='post_approve'),
     url(r'^post_delete/(?P<pk>\d+)/$', views.post_delete, name='post_delete'),
+    url(r'^login/$', views.login_custom, name='login_custom'),
 ]

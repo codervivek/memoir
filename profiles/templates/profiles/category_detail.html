@@ -8,7 +8,9 @@
 
 {% block full-content %}
 <br>
+{% if category.to_crawl %}
 {{category.crawl_category}}
+{% endif %}
 <div class="row">
     <div class="col-3">
         <br><br>

@@ -1,14 +1,29 @@
 import imaplib
 import re
 
+import os
+
+proxy = 'http://vivekraj:maymay@172.16.115.46:3128'
+
+os.environ['http_proxy'] = proxy 
+os.environ['HTTP_PROXY'] = proxy
+os.environ['https_proxy'] = proxy
+os.environ['HTTPS_PROXY'] = proxy
+
 servers=['teesta','naambor','disang','tamdil','dikrong']
 
 def crawl_print(username,password,search_keyword,server_no,regex,start):
 	messages=[]
 	try:
+		print("trying")
+		print(username)
+		print(password)
+		print(search_keyword)
+		print(servers[server_no])
 		M = imaplib.IMAP4_SSL(servers[server_no]+'.iitg.ernet.in')
 		M.login(username, password)
-	except:
+	except Exception as e:
+		print(e)
 		return {'end':1000,'messages':messages}
 	M.select()
 	regex=r""+regex.pattern
@@ -52,7 +67,7 @@ def get_cse_info(username,path):
 		if username in y['src']:
 			flag=1
 			name=(y["title"])
-			urllib.request.urlretrieve("https://www.iitg.ernet.in"+y['src'],'/home/vivekraj/django_test/memoir/media/'+path+username+".jpeg")
+			urllib.request.urlretrieve("https://www.iitg.ernet.in"+y['src'],'/home/vivek/Projects/memoir/media/'+path+username+".jpeg")
 
 	z=soup.find_all("td")
 
